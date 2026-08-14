@@ -1,23 +1,5 @@
 
-// CURSOR
-const dot = document.getElementById('cursor-dot');
-const ring = document.getElementById('cursor-ring');
-const label = document.getElementById('cursor-label');
-let mouseX=0,mouseY=0,ringX=0,ringY=0,labelX=0,labelY=0;
 const isTouch = ()=>('ontouchstart' in window)||navigator.maxTouchPoints>0;
-if(!isTouch()){
-  dot.style.left='0'; dot.style.top='0'; ring.style.left='0'; ring.style.top='0'; label.style.left='0'; label.style.top='0';
-  document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;dot.style.transform=`translate3d(${mouseX}px,${mouseY}px,0) translate(-50%,-50%)`;});
-  (function animCursor(){
-    ringX+=(mouseX-ringX)*.2; ringY+=(mouseY-ringY)*.2;
-    ring.style.transform=`translate3d(${ringX}px,${ringY}px,0) translate(-50%,-50%)`;
-    labelX+=(mouseX-labelX)*.2; labelY+=(mouseY-labelY)*.2;
-    label.style.transform=`translate3d(${labelX}px,${labelY+44}px,0) translate(-50%,-50%)`;
-    requestAnimationFrame(animCursor);
-  })();
-  document.querySelectorAll('[data-cursor-hover]').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
-  document.querySelectorAll('[data-cursor-project]').forEach(el=>{el.addEventListener('mouseenter',()=>{document.body.classList.add('cursor-project');label.textContent=el.dataset.cursorProject||'VIEW';});el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-project'));});
-}
 
 // MOUSE LIGHT
 const ml=document.getElementById('mouse-light');

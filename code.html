@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Process - Mahnoor Malik</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#2b2f43",
+                        "error-container": "#93000a",
+                        "surface-variant": "#273647",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "on-secondary-fixed-variant": "#454650",
+                        "inverse-surface": "#d4e4fa",
+                        "tertiary": "#c2c5de",
+                        "on-primary": "#313030",
+                        "surface-container-low": "#0d1c2d",
+                        "primary": "#c9c6c5",
+                        "surface-container": "#122131",
+                        "on-primary-container": "#797777",
+                        "outline": "#8e9192",
+                        "on-primary-fixed": "#1c1b1b",
+                        "background": "#051424",
+                        "on-surface": "#d4e4fa",
+                        "tertiary-fixed-dim": "#c2c5de",
+                        "surface-container-high": "#1c2b3c",
+                        "on-tertiary-fixed": "#161b2d",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#474646",
+                        "inverse-on-surface": "#233143",
+                        "primary-container": "#050505",
+                        "on-secondary-fixed": "#191b23",
+                        "surface-tint": "#c9c6c5",
+                        "tertiary-fixed": "#dee1fb",
+                        "tertiary-container": "#020415",
+                        "on-secondary-container": "#b4b4bf",
+                        "on-surface-variant": "#c4c7c7",
+                        "secondary-container": "#454650",
+                        "secondary-fixed-dim": "#c5c6d1",
+                        "surface": "#051424",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-container-lowest": "#010f1f",
+                        "secondary": "#c5c6d1",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#d4e4fa",
+                        "surface-dim": "#051424",
+                        "on-tertiary-container": "#73768d",
+                        "on-secondary": "#2e3039",
+                        "secondary-fixed": "#e1e1ed",
+                        "surface-bright": "#2c3a4c",
+                        "surface-container-highest": "#273647",
+                        "primary-fixed": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#444748",
+                        "on-tertiary-fixed-variant": "#42465a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "section-gap": "160px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "display-lg-mobile": ["Geist"],
+                        "label-caps": ["JetBrains Mono"],
+                        "code-sm": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    fontSize: {
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "code-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "display-lg": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Atmospheric Noise */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.02;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        
+        /* Liquid Glass Card Base */
+        .glass-card {
+            background-color: rgba(15, 15, 15, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+        }
+        
+        /* Connector Lines */
+        .connector-line {
+            background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-primary-container text-on-surface antialiased overflow-x-hidden selection:bg-primary selection:text-primary-container">
+<div class="noise-overlay"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-center items-center">
+<div class="bg-surface-container/60 backdrop-blur-xl rounded-full mt-4 mx-auto max-w-fit px-6 py-2 border border-white/15 shadow-[0_0_20px_rgba(201,198,197,0.1)] shadow-2xl flex items-center gap-8">
+<span class="font-headline-md text-headline-md tracking-tighter text-on-surface cursor-pointer">MAHNOOR MALIK</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors hover:scale-105 hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer active:scale-95" href="#">Work</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors hover:scale-105 hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer active:scale-95" href="#">Expertise</a>
+<a class="font-label-caps text-label-caps text-primary font-bold border-b border-primary pb-1 cursor-pointer active:scale-95" href="#">Process</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors hover:scale-105 hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer active:scale-95" href="#">Contact</a>
+</div>
+<button class="hidden md:block font-label-caps text-label-caps bg-primary text-primary-container px-4 py-1.5 rounded-full hover:scale-105 hover:shadow-[0_0_20px_rgba(201,198,197,0.4)] transition-all duration-300">Connect</button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-gutter pt-32 pb-section-gap">
+<!-- Hero Section -->
+<section class="relative min-h-[40vh] flex flex-col justify-center items-center text-center mb-section-gap">
+<div class="absolute inset-0 -z-10 opacity-30" data-alt="A cinematic, abstract representation of a digital engineering process. Floating glass panels with glowing cyan code snippets hovering over a deep, dark charcoal void. Atmospheric volumetric lighting, subtle liquid reflections, high-end sci-fi interface aesthetic. Moody, precise, and sophisticated." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKK2NiC8yTAfkb0PZB_ga1fMxi_Qx6qJEPWosguAX8ZMNJQnRUQxvvR1Nah9xHPYDzXLfhrARq65vIZku-nisTK0jYvJL-gq_8hbE4GbbswQxm_ba8Oz0GA6wjAVQ99K15IHEVXYTZLpjwkYRIs5cGTD54iTwXOAMLVe_xVF_6aWRO5m5Cuo9viW3vucFof1hQXRtJcmP_4Y6wSfuemBCPFATSh_ePQHXp-76-GVINGpfMvPW6qFdsjg')"></div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6">How I Build</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">From nebulous concept to hardened infrastructure. A systematic journey of architecture, integration, and precision deployment.</p>
+</section>
+<!-- Process Timeline -->
+<section class="relative">
+<!-- Central connecting line (Desktop) -->
+<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] -translate-x-1/2 connector-line z-0"></div>
+<div class="space-y-32 relative z-10">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-24">
+<div class="md:w-1/2 flex justify-end">
+<div class="glass-card rounded-xl p-8 max-w-lg w-full relative group transition-transform duration-500 hover:-translate-y-2">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+<div class="w-12 h-12 rounded-full border border-outline/30 flex items-center justify-center mb-6 bg-surface-container-low">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">troubleshoot</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">1. Problem Discovery</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Deconstructing the core challenge. Identifying constraints, user needs, and architectural boundaries before writing a single line of code.</p>
+<span class="inline-block font-code-sm text-code-sm text-outline border border-outline/20 px-3 py-1 rounded-full">Requirements Analysis</span>
+</div>
+</div>
+<div class="md:w-1/2 hidden md:block">
+<!-- Empty space for staggered layout -->
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-24">
+<div class="md:w-1/2 flex justify-start">
+<div class="glass-card rounded-xl p-8 max-w-lg w-full relative group transition-transform duration-500 hover:-translate-y-2">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+<div class="w-12 h-12 rounded-full border border-outline/30 flex items-center justify-center mb-6 bg-surface-container-low">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">2. Architecture &amp; Design</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Structuring the ecosystem. Defining data flows, component hierarchies, and API contracts to ensure scalability and resilience.</p>
+<span class="inline-block font-code-sm text-code-sm text-outline border border-outline/20 px-3 py-1 rounded-full">System Topologies</span>
+</div>
+</div>
+<div class="md:w-1/2 hidden md:block"></div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-24">
+<div class="md:w-1/2 flex justify-end">
+<div class="glass-card rounded-xl p-8 max-w-lg w-full relative group transition-transform duration-500 hover:-translate-y-2">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+<div class="w-12 h-12 rounded-full border border-outline/30 flex items-center justify-center mb-6 bg-surface-container-low">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">3. AI &amp; Automation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Injecting intelligence. Integrating generative models and automated pipelines to reduce manual overhead and enhance platform capabilities.</p>
+<span class="inline-block font-code-sm text-code-sm text-outline border border-outline/20 px-3 py-1 rounded-full">LLM Orchestration</span>
+</div>
+</div>
+<div class="md:w-1/2 hidden md:block"></div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-24">
+<div class="md:w-1/2 flex justify-start">
+<div class="glass-card rounded-xl p-8 max-w-lg w-full relative group transition-transform duration-500 hover:-translate-y-2">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+<div class="w-12 h-12 rounded-full border border-outline/30 flex items-center justify-center mb-6 bg-surface-container-low">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">4. Security Hardening</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Fortifying the perimeter. Implementing Zero Trust principles, sanitizing inputs, and ensuring cryptographic integrity across all layers.</p>
+<span class="inline-block font-code-sm text-code-sm text-outline border border-outline/20 px-3 py-1 rounded-full">Zero Trust Architecture</span>
+</div>
+</div>
+<div class="md:w-1/2 hidden md:block"></div>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-24">
+<div class="md:w-1/2 flex justify-end">
+<div class="glass-card rounded-xl p-8 max-w-lg w-full relative group transition-transform duration-500 hover:-translate-y-2">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+<div class="w-12 h-12 rounded-full border border-outline/30 flex items-center justify-center mb-6 bg-surface-container-low">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">5. Deployment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Going live. Seamless CI/CD orchestration, telemetry setup, and continuous iteration based on real-world performance metrics.</p>
+<span class="inline-block font-code-sm text-code-sm text-outline border border-outline/20 px-3 py-1 rounded-full">CI/CD Pipelines</span>
+</div>
+</div>
+<div class="md:w-1/2 hidden md:block"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto w-full py-20 px-8">
+<div class="mb-8 md:mb-0">
+<span class="font-label-caps text-label-caps text-on-surface block mb-4">MAHNOOR MALIK</span>
+<p class="font-body-md text-body-md text-primary">© 2024 Mahnoor Malik. Engineered with precision.</p>
+</div>
+<div class="flex flex-wrap gap-6 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">Documentation</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">Security Briefs</a>
+</div>
+</div>
+</footer>
+</body></html>

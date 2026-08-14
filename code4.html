@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - MAHNOOR MALIK</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#2b2f43",
+                      "error-container": "#93000a",
+                      "surface-variant": "#273647",
+                      "primary-fixed-dim": "#c9c6c5",
+                      "on-secondary-fixed-variant": "#454650",
+                      "inverse-surface": "#d4e4fa",
+                      "tertiary": "#c2c5de",
+                      "on-primary": "#313030",
+                      "surface-container-low": "#0d1c2d",
+                      "primary": "#c9c6c5",
+                      "surface-container": "#122131",
+                      "on-primary-container": "#797777",
+                      "outline": "#8e9192",
+                      "on-primary-fixed": "#1c1b1b",
+                      "background": "#051424",
+                      "on-surface": "#d4e4fa",
+                      "tertiary-fixed-dim": "#c2c5de",
+                      "surface-container-high": "#1c2b3c",
+                      "on-tertiary-fixed": "#161b2d",
+                      "on-error": "#690005",
+                      "on-primary-fixed-variant": "#474646",
+                      "inverse-on-surface": "#233143",
+                      "primary-container": "#050505",
+                      "on-secondary-fixed": "#191b23",
+                      "surface-tint": "#c9c6c5",
+                      "tertiary-fixed": "#dee1fb",
+                      "tertiary-container": "#020415",
+                      "on-secondary-container": "#b4b4bf",
+                      "on-surface-variant": "#c4c7c7",
+                      "secondary-container": "#454650",
+                      "secondary-fixed-dim": "#c5c6d1",
+                      "surface": "#051424",
+                      "inverse-primary": "#5f5e5e",
+                      "surface-container-lowest": "#010f1f",
+                      "secondary": "#c5c6d1",
+                      "on-error-container": "#ffdad6",
+                      "on-background": "#d4e4fa",
+                      "surface-dim": "#051424",
+                      "on-tertiary-container": "#73768d",
+                      "on-secondary": "#2e3039",
+                      "secondary-fixed": "#e1e1ed",
+                      "surface-bright": "#2c3a4c",
+                      "surface-container-highest": "#273647",
+                      "primary-fixed": "#e5e2e1",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#444748",
+                      "on-tertiary-fixed-variant": "#42465a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "160px",
+                      "container-max": "1440px",
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": ["Geist"],
+                      "label-caps": ["JetBrains Mono"],
+                      "code-sm": ["JetBrains Mono"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-md": ["Geist"],
+                      "display-lg": ["Geist"]
+              },
+              "fontSize": {
+                      "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "code-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Base styles and variables */
+        :root {
+            --glass-bg: rgba(15, 15, 15, 0.6);
+            --glass-border: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%);
+            --accent-cyan: #c9c6c5; /* Using primary color as accent for this theme to match config, despite prompt asking for cyan, config dictates primary */
+        }
+        
+        body {
+            background-color: #050505;
+            color: #d4e4fa; /* on-background */
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Subtle static noise overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+        }
+        
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: var(--glass-border);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        /* Input fields */
+        .minimal-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0;
+            color: #d4e4fa; /* on-surface */
+            transition: all 0.3s ease;
+        }
+        .minimal-input:focus {
+            outline: none;
+            border-bottom-color: var(--accent-cyan);
+            box-shadow: 0 1px 10px rgba(201, 198, 197, 0.2); /* using primary color for glow */
+        }
+        .minimal-input::placeholder {
+            color: #797777; /* on-primary-container */
+        }
+
+        /* Magnetic button effect container */
+        .magnetic-wrap {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Atmospheric glow */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201,198,197,0.05) 0%, rgba(5,5,5,0) 70%); /* primary color glow */
+            border-radius: 50%;
+            top: -100px;
+            left: -200px;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary/30 selection:text-primary">
+<!-- TopNavBar from Shared Components -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-center items-center">
+<div class="bg-surface-container/60 backdrop-blur-xl rounded-full mt-4 mx-auto max-w-fit px-6 py-2 border border-white/15 shadow-[0_0_20px_rgba(201,198,197,0.1)] shadow-2xl flex items-center gap-8">
+<span class="font-headline-md text-headline-md tracking-tighter text-on-surface">MAHNOOR MALIK</span>
+<div class="hidden md:flex items-center gap-6 font-label-caps text-label-caps">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:scale-105 hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer active:scale-95" href="#">Work</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:scale-105 hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer active:scale-95" href="#">Expertise</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:scale-105 hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer active:scale-95" href="#">Process</a>
+<a class="text-primary font-bold border-b border-primary pb-1 cursor-pointer active:scale-95" href="#">Contact</a>
+</div>
+<button class="hidden md:block bg-primary text-on-primary font-label-caps text-label-caps px-4 py-1.5 rounded-full hover:bg-primary-fixed transition-colors">Connect</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[160px] pb-section-gap px-gutter md:px-8 max-w-container-max mx-auto w-full relative z-10 flex flex-col items-center justify-center min-h-[80vh]">
+<div class="bg-glow"></div>
+<div class="text-center mb-16">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-4">Have a problem worth building?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Let's engineer a solution. Reach out for technical consultations, architectural reviews, or full-stack development.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter w-full max-w-5xl mx-auto">
+<!-- Left Col: Direct Links -->
+<div class="flex flex-col gap-6 justify-center">
+<a class="glass-panel rounded-xl p-8 group flex items-center justify-between transition-all duration-500 hover:bg-surface-container-low hover:-translate-y-1" href="mailto:hello@example.com">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">Direct Line</p>
+<p class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">hello@mahnoor.dev</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors group-hover:translate-x-2 duration-300">arrow_forward</span>
+</a>
+<a class="glass-panel rounded-xl p-8 group flex items-center justify-between transition-all duration-500 hover:bg-surface-container-low hover:-translate-y-1" href="#">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">Network</p>
+<p class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">LinkedIn Profile</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors group-hover:translate-x-2 duration-300">open_in_new</span>
+</a>
+</div>
+<!-- Right Col: Form -->
+<div class="glass-panel rounded-xl p-8">
+<form class="flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="name">Name // Entity</label>
+<input class="minimal-input font-code-sm text-code-sm w-full py-2 bg-transparent focus:ring-0" id="name" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="email">Return Address</label>
+<input class="minimal-input font-code-sm text-code-sm w-full py-2 bg-transparent focus:ring-0" id="email" placeholder="john@company.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="message">Transmission</label>
+<textarea class="minimal-input font-code-sm text-code-sm w-full py-2 bg-transparent focus:ring-0 resize-none" id="message" placeholder="Describe the protocol..." rows="4"></textarea>
+</div>
+<div class="magnetic-wrap self-end mt-4">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(201,198,197,0.3)] active:scale-95 flex items-center gap-2" type="button">
+                            Initialize Sequence
+                            <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer from Shared Components -->
+<footer class="w-full bg-background mt-auto">
+<div class="border-t border-outline-variant/20">
+<div class="full-width py-20 px-8 flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto">
+<span class="font-label-caps text-label-caps text-on-surface mb-6 md:mb-0">© 2024 Mahnoor Malik. Engineered with precision.</span>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">Documentation</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">Security Briefs</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple magnetic effect for the send button
+        const magneticWrap = document.querySelector('.magnetic-wrap');
+        const button = magneticWrap.querySelector('button');
+
+        magneticWrap.addEventListener('mousemove', (e) => {
+            const rect = magneticWrap.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        });
+
+        magneticWrap.addEventListener('mouseleave', () => {
+            button.style.transform = `translate(0px, 0px)`;
+        });
+    </script>
+</body></html>
